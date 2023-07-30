@@ -1,0 +1,29 @@
+.side_bar {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    top: 55px;
+    background-color: white;
+    width: 72px;
+    z-index: 200;
+    padding-top: 5px;
+}
+.side_bar_link { /*想要水平、垂直置中內容可以先變成flex再調*/
+    height: 74px;
+    display: flex;
+    flex-direction: column; /*改成column後...*/
+    justify-content: center; /*垂直方向*/
+    align-items: center; /*水平方向*/
+    cursor: pointer;
+}
+.side_bar_link:hover {
+    background-color: rgb(235, 235, 235);
+}
+.side_bar_link img { /*target img inside the side_bar_link class*/
+    height: 24px;
+    margin-bottom: 6px;
+}
+.side_bar_link div {
+    font-size: 10px;
+    text-align: center;
+}

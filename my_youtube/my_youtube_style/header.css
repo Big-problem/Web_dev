@@ -1,0 +1,155 @@
+.header {
+    height: 55px;
+    display: flex;
+    flex-direction: row; /* default value*/
+    justify-content: space-between;
+    
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: white;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(228, 228, 228);
+    z-index: 100; /*顯示在最上層 (除非別人>100)*/
+}
+.left_section {
+    display: flex;
+    align-items: center;
+}
+.hamburger_menu {
+    height: 24px;
+    margin-left: 24px;
+    margin-right: 24px;
+    cursor: pointer;
+}
+.youtube_logo {
+    height: 20px;
+    cursor: pointer;
+}
+.middle_section {
+    flex: 1;
+    margin-left: 70px;
+    margin-right: 35px;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+}
+.search_bar {
+    width: 0; /*search bar有自己預設的width, 把它變0讓width由flex 1決定*/
+    flex: 1;
+    height: 36.5px;
+    padding-left: 10px;
+    font-size: 16px;
+    /* border-width: 1px;
+    border-style: solid;
+    border-color: rgb(192, 192, 192); */
+    border: 1px solid rgb(192, 192, 912);
+    border-radius: 19px 0px 0px 19px;
+    box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05); /*shadow inside the box*/
+}
+.search_bar::placeholder {
+    font-size: 16px
+}
+.search_btn {
+    height: 40px;
+    width: 66px;
+    background-color: rgb(243, 243, 243);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(192, 192, 192);
+    border-radius: 0px 20px 20px 0px; /* 左上 右上 右下 左下*/
+    margin-left: -2px;
+    margin-right: 10px;
+}
+.search_btn,
+.voice_search_btn,
+.upload_icon_container,
+.youtube_apps_icon_container,
+.notification_icon_container {
+    position: relative;
+    display: flex; /* 利用flex調整內容的位置 */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.search_btn .tooltip,
+.voice_search_btn .tooltip,
+.upload_icon_container .tooltip,
+.youtube_apps_icon_container .tooltip,
+.notification_icon_container .tooltip {
+    position: absolute;
+    background-color: gray;
+    color: white;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 2px;
+    font-size: 12px;
+    bottom: -30px;
+    opacity: 0; /*invisible*/
+    transition: opacity 0.15s;
+    pointer-events: none; /*滑鼠指到時不會觸發hover*/
+    white-space: nowrap; /*不會換行*/
+}
+.search_btn:hover .tooltip,
+.voice_search_btn:hover .tooltip,
+.upload_icon_container:hover .tooltip,
+.youtube_apps_icon_container:hover .tooltip,
+.notification_icon_container:hover .tooltip {
+    opacity: 1;
+}
+.search_icon {
+    height: 25px;
+}
+.voice_search_btn {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgb(245, 245, 245);
+}
+.voice_search_icon {
+    height: 24px;
+}
+.right_section {
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 20px;
+    flex-shrink: 0; /*do not shrink*/
+}
+.upload_icon {
+    height: 24px;
+}
+.youtube_apps_icon {
+    height: 24px;
+}
+.notification_icon {
+    height: 24px;
+}
+.notification_icon_container {
+    position: relative;
+}
+.notification_count {
+    position: absolute;
+    top: -2px;
+    right: -4px;
+    background-color: rgb(200, 0, 0);
+    color: white;
+    font-size: 11px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    border-radius: 10px;
+}
+.my_channel_picture {
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+}
