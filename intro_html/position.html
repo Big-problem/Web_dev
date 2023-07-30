@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position practice</title>
+  </head>
+  <body style="height: 3000px; padding-top: 60px; padding-left: 80px">
+    <!-- position: fixed時, top決定物件與視窗上方的距離-->
+    <!-- use top, left, right, bottom to determine the size and position of the div-->
+    <div
+      style="
+        background-color: black;
+        color: white;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        height: 50px;
+        z-index: 100;
+      "
+    >
+      header
+    </div>
+    <!-- fixed: placed in the browser window-->
+    <div
+      style="
+        background-color: green;
+        color: white;
+        position: fixed;
+        left: 0px;
+        bottom: 0px;
+        top: 50px;
+        width: 72px;
+      "
+    >
+      sidebar
+      <div
+        style="
+          position: absolute;
+          background-color: red;
+          color: white;
+          right: 0px;
+          top: 0px;
+        "
+      >
+        X
+      </div>
+    </div>
+    <!-- absolute: placed in the page-->
+    <div
+      style="
+        position: absolute;
+        background-color: red;
+        color: white;
+        right: 10px;
+        top: 60px;
+      "
+    >
+      absolute
+    </div>
+
+    <!--position: static為default-->
+    <div
+      style="
+        background-color: lightblue;
+        height: 200px;
+        width: 200px;
+        position: static;
+        text-align: justify;
+      "
+    >
+      position: absolute放進fixed裡面位置會相對於fixed物件,
+      非fixed的話要設position:&nbsp;relative, 不然位置會相對於頁面
+    </div>
+    <div
+      style="
+        background-color: lightpink;
+        height: 200px;
+        width: 200px;
+        position: relative;
+      "
+    >
+      position: static的z-index (決定物件重疊時會顯示誰)會最小
+      其餘的寫在html下的z-index較大
+      <div
+        style="
+          position: absolute;
+          background-color: black;
+          color: white;
+          bottom: 10px;
+          right: 10px;
+        "
+      >
+        5:00
+      </div>
+    </div>
+    <a href="index.html">Back to home</a>
+  </body>
+</html>

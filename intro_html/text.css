@@ -1,0 +1,54 @@
+p {
+font-family: Roboto; /*font*/
+margin-top: 0px;
+margin-bottom: 0px;
+}
+.title_p {
+font-weight: bold;
+font-size: 18px;
+width: 400px;
+line-height: 24px; /*行與行的距離*/
+margin-bottom: 5px;
+}
+.stats_p {
+font-size: 14px;
+color: rgb(96, 96, 96);
+margin-bottom: 20px;
+}
+.author_p {
+color: rgb(96, 96, 96);
+font-size: 14px;
+margin-bottom: 20px;
+}
+.description_p {
+width: 320px;
+font-size: 14px;
+color: rgb(96, 96, 96);
+line-height: 22px;
+margin-bottom: 10px;
+text-align: justify; /*左右對齊*/
+}
+.apple_p {
+font-size: 14px;
+background-color: rgb(217, 41, 41);
+color: white;
+text-align: center;
+padding-top: 15px;
+padding-bottom: 15px;
+margin-bottom: 50px;
+}
+.shop_link {
+margin-left: 12px; /*直接在html加空白時, 多個空白只會視為一個空白, 利用span增加margin屬性解決*/
+cursor: pointer;
+}
+.shop_link:hover {
+text-decoration: underline;
+}
+.strong_c {
+    color: red;
+}
+.div1 {
+    display: inline-block;
+    background-color: aqua;
+    margin-bottom: 150px;
+}

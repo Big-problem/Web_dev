@@ -1,0 +1,124 @@
+.subscribe_btn {
+padding-top: 10px; /*可以用padding調整長寬, 不需要用height, width*/
+padding-bottom: 10px;
+padding-left: 16px;
+padding-right: 16px;
+color: white;
+background-color: rgb(200, 0, 0);
+border: none;
+border-radius: 2px;
+cursor: pointer;
+transition: opacity 0.15s; /*讓切換動畫較smooth, usually 0.15s*/
+margin-left: 20px;
+vertical-align: top; /*Default aligns with the text, not the box*/
+}
+.subscribe_btn:hover {
+opacity: 70%;
+}
+.subscribe_btn:active {
+opacity: 50%;
+}
+.join_btn {
+padding-top: 9px;
+padding-bottom: 9px;
+padding-right: 16px;
+padding-left: 16px;
+color: blue;
+border-color: blue;
+border-width: 1px;
+border-style: solid;
+border-radius: 2px;
+cursor: pointer;
+margin-left: 8px;
+transition: background-color 0.15s, color 0.15s;
+}
+.join_btn:hover {
+color: white;
+background-color: blue;
+}
+.join_btn:active {
+opacity: 50%;
+}
+.tweet_btn {
+padding-top: 10px;
+padding-bottom: 10px;
+padding-left: 16px;
+padding-right: 16px;
+color: white;
+background-color: blue;
+border: none;
+border-radius: 18px;
+cursor: pointer;
+margin-left: 8px;
+font-weight: bold;
+font-size: 10px;
+transition: box-shadow 0.15s;
+vertical-align: top;
+}
+.tweet_btn:hover {
+/*水平 垂直 blur color(a means opacity)*/
+box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+.stretch_btn {
+background-color: rgba(5, 69, 5, 0.861);
+color: white;
+border: none;
+margin-top: 10px;
+margin-left: 20px;
+padding-left: 16px;
+padding-right: 16px;
+padding-top: 10px;
+padding-bottom: 10px;
+font-size: 15px;
+cursor: pointer;
+transition: padding 0.8s;
+}
+.stretch_btn:hover {
+padding-left: 32px;
+padding-right: 32px;
+padding-top: 20px;
+padding-bottom: 20px;
+}
+.number1_btn {
+background-color: rgba(5, 69, 5, 0.861);
+color: white;
+border: none;
+margin-top: 10px;
+margin-left: 20px;
+margin-right: 10px;
+padding-top: 10px;
+padding-bottom: 10px;
+padding-left: 16px;
+padding-right: 16px;
+font-weight: bold;
+font-size: 15px;
+cursor: pointer;
+}
+.number1_btn:hover {
+/*同時調整padding and margin*/
+padding-left: 24px;
+padding-right: 24px;
+margin-left: 12px;
+margin-right: 2px;
+}
+.number_btn {
+background-color: rgba(5, 69, 5, 0.861);
+color: white;
+border: none;
+margin-top: 10px;
+margin-left: 10px;
+margin-right: 10px;
+padding-top: 10px;
+padding-bottom: 10px;
+padding-left: 16px;
+padding-right: 16px;
+font-weight: bold;
+font-size: 15px;
+cursor: pointer;
+}
+.number_btn:hover {
+padding-left: 24px;
+padding-right: 24px;
+margin-left: 2px;
+margin-right: 2px;
+}

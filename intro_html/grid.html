@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Practice</title>
+  </head>
+  <body style="padding-bottom: 1000px">
+    <a href="index.html" style="margin-bottom: 10px; display: inline-block"
+      >Back to home
+    </a>
+    <div style="display: grid; grid-template-columns: 100px 100px">
+      <!-- 2 columns, both 100px-->
+      <div style="background-color: lightblue">No space between grid</div>
+      <div style="background-color: lightpink">
+        Better
+        <p>Alignment (same height)</p>
+      </div>
+    </div>
+
+    <div
+      style="
+        display: grid;
+        grid-template-columns: 100px 100px 200px;
+        margin-top: 30px;
+      "
+    >
+      <!-- 3 columns-->
+      <div style="background-color: lightblue">100px</div>
+      <div style="background-color: lightpink">
+        100px
+        <p>text~~</p>
+      </div>
+      <div style="background-color: lightblue">200px</div>
+      <div style="background-color: lightpink">100px</div>
+      <!--超過行數就到下一列-->
+    </div>
+
+    <div
+      style="display: grid; grid-template-columns: 100px 1fr; margin-top: 30px"
+    >
+      <!-- 1fr means take up the whole space, 調整視窗會跟著動-->
+      <div style="background-color: lightblue">100px</div>
+      <div style="background-color: lightpink">1fr</div>
+    </div>
+
+    <div
+      style="
+        display: grid;
+        grid-template-columns: 100px 1fr 2fr;
+        margin-top: 30px;
+      "
+    >
+      <!-- fr前的數字代表比例-->
+      <div style="background-color: lightblue">100px</div>
+      <div style="background-color: lightpink">1fr</div>
+      <div style="background-color: lightblue">2fr</div>
+    </div>
+
+    <div
+      style="
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-top: 30px;
+        column-gap: 20px;
+        row-gap: 40px;
+      "
+    >
+      <!-- fr前的數字代表比例-->
+      <div style="background-color: lightblue; height: 200px">1fr</div>
+      <div style="background-color: lightpink; height: 200px">1fr</div>
+      <div style="background-color: lightblue; height: 200px">1fr</div>
+      <div style="background-color: lightpink; height: 200px">1fr</div>
+      <div style="background-color: lightblue; height: 200px">1fr</div>
+      <div style="background-color: lightpink; height: 200px">1fr</div>
+    </div>
+  </body>
+</html>

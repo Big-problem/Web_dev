@@ -1,0 +1,22 @@
+.first_line {
+   margin-right: 20px;
+}
+.second_line {
+   display: inline-block;
+   margin-top: 10px;
+   margin-right: 20px;
+}
+em {
+/*強調text*/
+color: red;
+}
+img {
+width: 200px;
+height: 200px;
+object-fit: cover; /*讓照片內容不會被壓縮到, 大多用cover*/
+                   /* 用contain時會讓整張照片都顯示出來, 
+                      所以照片大小不一定真的和設定的width, height一樣
+                      加入border性質後可以看得更了解*/
+/*object-position: right;*/ /*當照片小於邊界時可以調整照片在邊界中的位置
+                         當照片大於邊界時可以調整哪個部分要顯示出來*/
+}
