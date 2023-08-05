@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+      }
+      .calculator {
+        background-color: lightblue;
+        border: 2px;
+        border-color: black;
+        border-style: solid;
+        width: 500px;
+        padding: 2px;
+      }
+      .title-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .title {
+        font-size: 32px;
+        margin: 0px;
+      }
+      .result {
+        font-size: 24px;
+        margin: 0px;
+      }
+      .btn-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        column-gap: 2px;
+        row-gap: 2px;
+        margin-top: 5px;
+      }
+      .last-grid {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        column-gap: 2px;
+        margin-top: 2px;
+      }
+      .btn {
+        height: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="title-box">
+        <p class="title">Calculator</p>
+        <p class="result" id="result">Result:</p>
+      </div>
+      <div class="btn-grid">
+        <button class="btn" onclick="push_btn(this)">7</button>
+        <button class="btn" onclick="push_btn(this)">8</button>
+        <button class="btn" onclick="push_btn(this)">9</button>
+        <button class="btn" onclick="push_btn(this)">*</button>
+        <button class="btn" onclick="push_btn(this)">4</button>
+        <button class="btn" onclick="push_btn(this)">5</button>
+        <button class="btn" onclick="push_btn(this)">6</button>
+        <button class="btn" onclick="push_btn(this)">/</button>
+        <button class="btn" onclick="push_btn(this)">1</button>
+        <button class="btn" onclick="push_btn(this)">2</button>
+        <button class="btn" onclick="push_btn(this)">3</button>
+        <button class="btn" onclick="push_btn(this)">-</button>
+      </div>
+      <div class="last-grid">
+        <button class="btn" onclick="calculate()">=</button>
+        <button class="btn" onclick="push_btn(this)">+</button>
+      </div>
+    </div>
+
+    <script>
+      let ret = "";
+      function push_btn(btn) {
+        ret += btn.innerHTML;
+        console.log(ret);
+      }
+      function calculate() {
+        console.log("eval...");
+        document.getElementById("result").innerHTML = `Result: ${eval(ret)}`;
+        ret = "";
+      }
+    </script>
+  </body>
+</html>
