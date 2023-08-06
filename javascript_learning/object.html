@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object</title>
+  </head>
+  <body>
+    <script>
+      const product = {
+        name: "socks",
+        price: 1090,
+      };
+      console.log(product);
+      console.log(product.name);
+      console.log(product.price);
+      product.name = "cotton socks"; // Modify
+      product.abc = true; // Add new property
+      delete product.price; // remove existed property
+      console.log(product);
+      console.log(typeof product);
+
+      console.log("==================================");
+
+      // Bracket Notation allow us to use properties that don't work
+      // with dot. e.g. property name with special sign, using string variable to access property
+      const product2 = {
+        name: "shirt",
+        ["delivery-time"]: "1 day", // [] 可省略
+        funnn: function function1() {
+          console.log("Function inside object");
+        },
+      };
+      console.log(product2);
+      console.log(product2.name);
+      console.log(product2["name"]);
+      //console.log(product2.delivery - time); // This will cause error
+      console.log(product2["delivery-time"]);
+      product2.funnn();
+
+      // JSON: JavaScript Object Notation (do not support object function)
+      console.log(JSON.stringify(product2)); // only display object property
+      console.log(typeof JSON.stringify(product2)); // string
+
+      const jsonString = JSON.stringify(product2);
+      console.log(JSON.parse(jsonString));
+
+      // 重新整理頁面時資料不會被清掉 (only support storing string, so can use JSON to convert object to string)
+      console.log(localStorage.getItem("message"));
+      localStorage.setItem("message", "hello"); // store 'hello' in 'message'
+
+      console.log("================================");
+      // not only object can have method because of Auto-Boxing
+      console.log("hello".length);
+      console.log("hello".toUpperCase());
+
+      console.log("================================");
+      // object is a reference, so we can change it even with const
+      const obj1 = {
+        message: "hello",
+      };
+      const obj2 = obj1;
+      obj1.message = "World";
+      console.log(obj1);
+      console.log(obj2);
+
+      const obj3 = {
+        message: "World",
+      };
+      console.log(obj1 === obj3); // false
+
+      const obj4 = {
+        message: "Igowalla",
+        price: 799,
+      };
+
+      // const message = obj4.message; // destruction:把obj4的property拿出來存到相同名相同名字的variable
+      // const price = obj4.price;
+      const { message, price } = obj4;
+      console.log(message);
+      console.log(price);
+
+      const obj5 = {
+        // message: message
+        message, // 把已存在的variable的值存進來
+        // method: function function1() {
+        //   console.log("method");
+        // }
+        method() {
+          console.log("method");
+        },
+      };
+      console.log(obj5);
+      obj5.method();
+    </script>
+  </body>
+</html>
