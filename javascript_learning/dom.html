@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <button>hello</button>
+    <button class="btn2">Second button</button>
+    <script>
+      // HTML elements inside JavaScript is just a JavaScript object
+      /*
+      document.body.innerHTML = "hello";
+      document.title = "Good job!";
+      */
+      console.log(document.title);
+      //document.title = "changed";
+
+      console.log(document.body);
+      console.log(typeof document.body); // object
+
+      console.log(document.body.innerHTML);
+      //document.body.innerHTML = "<button>good Job!</button>";
+      console.log("================================");
+      console.log(document.querySelector("button").innerHTML); // Select the first element
+      document.querySelector("button").innerHTML = "Changed";
+
+      console.log(document.querySelector(".btn2")); // . means looking for class (class selector)
+      const buttonElement = document.querySelector(".btn2");
+      console.log(buttonElement);
+    </script>
+  </body>
+</html>
