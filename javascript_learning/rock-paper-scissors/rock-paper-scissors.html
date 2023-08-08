@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
+    <style>
+      .reset-button {
+        display: block;
+        margin-bottom: 20px;
+      }
+    </style>
   </head>
   <body>
     <p>Rock Paper Scissors</p>
@@ -36,6 +42,7 @@
     <p class="js-score"></p>
 
     <button
+      class="reset-button"
       onclick="
       score.wins = 0;
       score.losses = 0;
@@ -48,6 +55,8 @@
     >
       Reset Score
     </button>
+
+    <a href="rock-paper-scissors-full.html">Full Version</a>
 
     <script>
       let computerChoice;

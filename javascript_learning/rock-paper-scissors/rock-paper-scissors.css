@@ -1,0 +1,44 @@
+body {
+    background-color: rgb(25, 25, 25);
+    font-family: Arial;
+    color: white;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.move-icon {
+    height: 50px;
+}
+
+.move-button {
+    background-color: transparent; /* able to see through*/
+    border: 3px;
+    border-color: white;
+    border-radius: 50%;
+    border-style: solid;
+    width: 120px; /* 可以用padding調大小, 但因為三張照片尺寸不同*/
+    height: 120px; /* 所以直接用width height設定*/
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.result {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.score {
+    margin-top: 60px;
+}
+
+.reset-button {
+    background-color: white;
+    border: none;
+    font-size: 15px;
+    padding: 8px 15px;
+    cursor: pointer;
+}
