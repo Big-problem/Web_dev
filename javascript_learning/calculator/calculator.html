@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator-style.css" />
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="title-box">
+        <p class="title">Calculator</p>
+        <p class="result" id="result"></p>
+      </div>
+      <div class="btn-grid">
+        <button class="btn" onclick="press_btn(this)">1</button>
+        <button class="btn" onclick="press_btn(this)">2</button>
+        <button class="btn" onclick="press_btn(this)">3</button>
+        <button class="btn operator-btn" onclick="press_btn_operator(this)">
+          +
+        </button>
+        <button class="btn" onclick="press_btn(this)">4</button>
+        <button class="btn" onclick="press_btn(this)">5</button>
+        <button class="btn" onclick="press_btn(this)">6</button>
+        <button class="btn operator-btn" onclick="press_btn_operator(this)">
+          -
+        </button>
+        <button class="btn" onclick="press_btn(this)">7</button>
+        <button class="btn" onclick="press_btn(this)">8</button>
+        <button class="btn" onclick="press_btn(this)">9</button>
+        <button class="btn operator-btn" onclick="press_btn_operator(this)">
+          *
+        </button>
+        <button class="btn" onclick="press_btn(this)">0</button>
+        <button class="btn" onclick="press_btn(this)">.</button>
+        <button class="btn" onclick="calculate()">=</button>
+        <button class="btn operator-btn" onclick="press_btn_operator(this)">
+          /
+        </button>
+        <button class="btn" onclick="clear_content()">Clear</button>
+      </div>
+    </div>
+
+    <script src="calculator.js"></script>
+  </body>
+</html>
