@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="todo-list.css" />
+  </head>
+  <body>
+    <p class="title-text">Todo List Practice 1</p>
+    <input
+      class="js-todo-input"
+      type="text"
+      placeholder="Todo name"
+      onkeydown="addTodoEnter(event)"
+    />
+    <button onclick="addTodo()">Add</button>
+    <p>(Print on the console)</p>
+    <!-- ##################################################### -->
+
+    <p class="title-text">Todo List Practice 2</p>
+    <input
+      class="js-todo-input2"
+      type="text"
+      placeholder="Todo name"
+      onkeydown="addTodoEnter2(event)"
+    />
+    <button onclick="addTodo2()">Add</button>
+    <div class="js-todo-list"></div>
+    <!-- ##################################################### -->
+
+    <p class="title-text">Final Todo List</p>
+    <div class="todo-input-grid">
+      <input
+        class="js-todo-input3 name-input"
+        type="text"
+        placeholder="Todo name"
+        onkeydown="addTodoEnter3(event)"
+      />
+      <input
+        class="js-todo-date date-input"
+        type="date"
+        onkeydown="addTodoEnter3(event)"
+      />
+      <button class="add-btn" onclick="addTodo3()">Add</button>
+    </div>
+    <div class="js-todo-list3 todo-grid"></div>
+
+    <script src="todo-list.js"></script>
+  </body>
+</html>
