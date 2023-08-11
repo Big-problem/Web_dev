@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function</title>
+  </head>
+  <body>
+    <p>Function is a value.</p>
+    <p>Everything we can do with a value, we can do with a function</p>
+    <p>e.g. save function inside an object</p>
+    <p>or pass a function to another function as a parameter (call back)</p>
+    <script>
+      function sayHi() {
+        console.log("Hi");
+      }
+      const hi = function () {
+        // This is an anonymous function
+        console.log("Hello");
+      };
+
+      setTimeout(function () {
+        console.log("Timeout");
+      }, 2000); // After 2 second will run the function
+      // Asynchronous code: setTimeout會直接往後執行，等到時間到再跑指定的function
+
+      console.log("next line");
+
+      /*
+      setInterval(function () {
+        console.log("interval");
+      }, 3000);*/ // similar to setTimeout, but will keep running every specific time interval
+      console.log("next line2");
+    </script>
+  </body>
+</html>
