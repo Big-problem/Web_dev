@@ -11,6 +11,51 @@ updateScoreElement();
 
 let isAutoPlay = false;
 let intervalId;
+
+// document.querySelector('js-rock-button').addEventListener('click', playGame()); // This is WRONG
+document.querySelector('.js-rock-button').addEventListener('click', () => {
+    playGame('rock');
+});
+
+document.querySelector('.js-paper-button').addEventListener('click', () => {
+    playGame('paper');
+});
+
+document.querySelector('.js-scissors-button').addEventListener('click', () => {
+    playGame('scissors');
+});
+
+document.querySelector('.js-reset-button').addEventListener('click', () => {
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
+    localStorage.removeItem('score');
+    document.querySelector('.js-result').innerHTML = '';
+    document.querySelector('.js-move').innerHTML = '';
+    updateScoreElement();
+});
+
+document.querySelector('.js-auto-play').addEventListener('click', () => {
+    autoPlay();
+});
+
+document.body.addEventListener('keydown', (event) => { // 按鍵盤會觸發
+    if(event.key === 'r'){
+        playGame('rock');
+    }
+    else if(event.key === 'p'){
+        playGame('paper');
+    }
+    else if(event.key === 's'){
+        playGame('scissors');
+    }
+});
+
+document.body.addEventListener('keydown', (event) => {
+    if(event.key === 'a'){
+        autoPlay();
+    }
+});
 // ############################################################################
 function pickComputerMove() {
     let computerChoice = '';
@@ -76,7 +121,7 @@ function updateScoreElement() {
 
 function autoPlay() {
     if(!isAutoPlay){
-        intervalId = setInterval(function() { // setInterval returns a number, we can use it to stop it
+        intervalId = setInterval(() => { // setInterval returns a number, we can use it to stop it
             const autoMove = pickComputerMove();
             playGame(autoMove);
         }, 1500);

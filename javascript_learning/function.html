@@ -10,6 +10,7 @@
     <p>Everything we can do with a value, we can do with a function</p>
     <p>e.g. save function inside an object</p>
     <p>or pass a function to another function as a parameter (call back)</p>
+    <button onclick="" class="js-btn">Click</button>
     <script>
       function sayHi() {
         console.log("Hi");
@@ -31,6 +32,36 @@
         console.log("interval");
       }, 3000);*/ // similar to setTimeout, but will keep running every specific time interval
       console.log("next line2");
+
+      const arrowFunction = (param) => {
+        // Arrow function
+        console.log(param);
+      };
+      arrowFunction("ToxiCobra 99");
+
+      const eventListener = () => {
+        console.log("Click~~");
+      };
+      const btnElement = document.querySelector(".js-btn");
+      btnElement.addEventListener("click", eventListener);
+      btnElement.removeEventListener("click", eventListener);
+      btnElement.addEventListener("click", () => {
+        console.log("Click2~~");
+      });
+
+      // Filter
+      console.log(
+        [1, -3, 5, 2, 4, 6, 8, 10].filter((value, i) => {
+          return value % 3 === 0;
+        })
+      );
+
+      // Map
+      console.log(
+        [1, 1, 3, 2, 5, 6, 7, 8, 90].map((value, i) => {
+          return value * 2 + 10;
+        })
+      );
     </script>
   </body>
 </html>
