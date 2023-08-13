@@ -656,5 +656,35 @@ const products = [
       "apparel",
       "mens"
     ]
+  },
+  {
+    id: "ah2855e9-9927-284f-b7mm-11pkk832f955",
+    image: "images/products/backpack.jpg",
+    name: "Multifunctional Backpack",
+    rating: {
+      stars: 3,
+      count: 537
+    },
+    priceCents: 899,
+    keywords: [
+      "bag",
+      "cool",
+      "mens"
+    ]
+  },
+  {
+    id: "ah2855e9-9927-284f-b7mm-11pkk832f955",
+    image: "images/products/umbrella.jpg",
+    name: "Light Umbrella - Green",
+    rating: {
+      stars: 3.5,
+      count: 244
+    },
+    priceCents: 359,
+    keywords: [
+      "unbrella",
+      "rainy",
+      "green"
+    ]
   }
 ];
