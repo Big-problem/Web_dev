@@ -1,4 +1,5 @@
 import {cart} from '../data/cart.js'; // import the variable to avoid name conflict (put it at the top of the file)
+import {products} from '../data/products.js';
 
 // Save the data
 // data/products.js this file will do it
