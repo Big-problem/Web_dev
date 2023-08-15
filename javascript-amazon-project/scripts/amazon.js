@@ -1,4 +1,4 @@
-import {cart} from '../data/cart.js'; // import the variable to avoid name conflict (put it at the top of the file)
+import {cart, addToCart} from '../data/cart.js'; // import the variable to avoid name conflict (put it at the top of the file)
 import {products} from '../data/products.js';
 
 // Save the data
@@ -62,6 +62,14 @@ products.forEach((product) => {
 
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
 
+function updateCartQuantity(){
+    let cartQuantity = 0;
+    cart.forEach((cartItem) => { // calculate the total quantity
+        cartQuantity += cartItem.quantity;
+    });
+    document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+}
+
 document.querySelectorAll('.js-add-to-cart-button').forEach((button) => {
     let timeoutId; // Using JS closure property, every for loop has its own timeoutId variable
 
@@ -69,27 +77,12 @@ document.querySelectorAll('.js-add-to-cart-button').forEach((button) => {
         const {productId} = button.dataset; // dataset property gave us all the data attributes
                                             // use camel case to access it
         const selectQuantity = document.querySelector(`.js-quantity-selector-${productId}`).value;
-        let match;                                        
-        
-        cart.forEach((item) => { // Add the selected quantity
-            if(item.productId === productId) match = item;
-        });
-        if(match) match.quantity += Number(selectQuantity);
-        else{
-            cart.push({
-                productId,
-                quantity: Number(selectQuantity)
-            });
-        }
 
-        let cartQuantity = 0;
-        cart.forEach((item) => { // calculate the total quantity
-            cartQuantity += item.quantity;
-        });
-        document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+        addToCart(productId, selectQuantity);
+
+        updateCartQuantity();
         
         document.querySelector(`.js-added-to-cart-${productId}`).classList.add('product-selected');
-
         if(timeoutId) clearTimeout(timeoutId); // 重複購買會重製setTimeout
         timeoutId = setTimeout(() => {
             document.querySelector(`.js-added-to-cart-${productId}`).classList.remove('product-selected');
