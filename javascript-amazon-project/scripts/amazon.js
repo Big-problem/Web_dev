@@ -6,6 +6,22 @@ import { formatCurrency } from './utils/money.js';
 // data/products.js this file will do it
 
 // Generating HTML
+function updateCartQuantity(){
+	let cartQuantity = 0;
+	cart.forEach((cartItem) => { // calculate the total quantity
+		cartQuantity += cartItem.quantity;
+	});
+	document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+}
+
+function timeOut(timeoutId, productId) {
+	if(timeoutId) clearTimeout(timeoutId); // 重複購買會重製setTimeout
+	timeoutId = setTimeout(() => {
+		document.querySelector(`.js-added-to-cart-${productId}`).classList.remove('product-selected');
+	}, 2000);
+	return timeoutId;
+}
+
 let productsHTML = '';
 
 products.forEach((product) => {
@@ -63,21 +79,7 @@ products.forEach((product) => {
 
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
 
-function updateCartQuantity(){
-	let cartQuantity = 0;
-	cart.forEach((cartItem) => { // calculate the total quantity
-		cartQuantity += cartItem.quantity;
-	});
-	document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
-}
-
-function timeOut(timeoutId, productId) {
-	if(timeoutId) clearTimeout(timeoutId); // 重複購買會重製setTimeout
-	timeoutId = setTimeout(() => {
-		document.querySelector(`.js-added-to-cart-${productId}`).classList.remove('product-selected');
-	}, 2000);
-	return timeoutId;
-}
+updateCartQuantity()
 
 document.querySelectorAll('.js-add-to-cart-button').forEach((button) => {
 	let timeoutId; // Using JS closure property, every for loop has its own timeoutId variable

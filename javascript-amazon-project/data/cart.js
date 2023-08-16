@@ -10,17 +10,16 @@
     need to use live server.
 */
 
-export const cart = [{
-	productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
-	quantity: 2
-}, {
-	productId: "15b6fc6f-327a-4ec4-896f-486349e85a3d",
-	quantity: 1
-}]; // this variable can be used ouside of cart.js
+export let cart = JSON.parse(localStorage.getItem('cart')) // this variable can be used ouside of cart.js
+if(!cart) cart = []
+
+function saveToStorage() {
+	localStorage.setItem('cart', JSON.stringify(cart));
+}
 
 export function addToCart(productId, selectQuantity) {
 	let match;                                        
-			
+	
 	cart.forEach((cartItem) => { // Add the selected quantity
 		if(cartItem.productId === productId) match = cartItem;
 	});
@@ -31,6 +30,8 @@ export function addToCart(productId, selectQuantity) {
 			quantity: Number(selectQuantity)
 		});
 	}
+
+	saveToStorage();
 }
 
 export function removeFromCart(pruductId) {
@@ -40,4 +41,6 @@ export function removeFromCart(pruductId) {
 			break;
 		}
 	}
+
+	saveToStorage();
 }
