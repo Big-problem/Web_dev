@@ -71,12 +71,20 @@ function updateCartQuantity(){
 	document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
 }
 
+function timeOut(timeoutId, productId) {
+	if(timeoutId) clearTimeout(timeoutId); // 重複購買會重製setTimeout
+	timeoutId = setTimeout(() => {
+		document.querySelector(`.js-added-to-cart-${productId}`).classList.remove('product-selected');
+	}, 2000);
+	return timeoutId;
+}
+
 document.querySelectorAll('.js-add-to-cart-button').forEach((button) => {
 	let timeoutId; // Using JS closure property, every for loop has its own timeoutId variable
 
 	button.addEventListener('click', () => {
 		const {productId} = button.dataset; // dataset property gave us all the data attributes
-																				// use camel case to access it
+											// use camel case to access it
 		const selectQuantity = document.querySelector(`.js-quantity-selector-${productId}`).value;
 
 		addToCart(productId, selectQuantity);
@@ -84,9 +92,6 @@ document.querySelectorAll('.js-add-to-cart-button').forEach((button) => {
 		updateCartQuantity();
 			
 		document.querySelector(`.js-added-to-cart-${productId}`).classList.add('product-selected');
-		if(timeoutId) clearTimeout(timeoutId); // 重複購買會重製setTimeout
-		timeoutId = setTimeout(() => {
-			document.querySelector(`.js-added-to-cart-${productId}`).classList.remove('product-selected');
-		}, 2000);
+		timeoutId = timeOut(timeoutId, productId);
 	})
 });

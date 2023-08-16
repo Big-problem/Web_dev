@@ -18,7 +18,7 @@ export const cart = [{
 	quantity: 1
 }]; // this variable can be used ouside of cart.js
 
-export function addToCart(productId, selectQuantity){
+export function addToCart(productId, selectQuantity) {
 	let match;                                        
 			
 	cart.forEach((cartItem) => { // Add the selected quantity
@@ -30,5 +30,14 @@ export function addToCart(productId, selectQuantity){
 			productId,
 			quantity: Number(selectQuantity)
 		});
+	}
+}
+
+export function removeFromCart(pruductId) {
+	for(let i = 0; i < cart.length; i++) {
+		if(cart[i].productId === pruductId) {
+			cart.splice(i, 1);
+			break;
+		}
 	}
 }
