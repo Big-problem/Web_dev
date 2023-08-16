@@ -16,7 +16,7 @@ cart.forEach((cartItem) => { // Generating HTML
 
 	cartSummaryHTML += //底下的radio button相同name為一組 (每組只能選一個)
   `
-	<div class="cart-item-container">
+	<div class="cart-item-container js-cart-item-container-${matchProduct.id}">
 		<div class="delivery-date">Delivery date: Tuesday, June 21</div>
 
 		<div class="cart-item-details-grid">
@@ -91,6 +91,6 @@ document.querySelectorAll('.js-delete-link').forEach((link) => {
 	link.addEventListener('click', () => {
 		const {productId} = link.dataset;
 		removeFromCart(productId);
-		console.log(cart);
+		document.querySelector(`.js-cart-item-container-${productId}`).remove(); // remove from the page
 	})
 })
