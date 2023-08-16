@@ -1,4 +1,4 @@
-import {cart, addToCart} from '../data/cart.js'; // import the variable to avoid name conflict (put it at the top of the file)
+import {cart, addToCart, calculateCartQuantity} from '../data/cart.js'; // import the variable to avoid name conflict (put it at the top of the file)
 import {products} from '../data/products.js';
 import { formatCurrency } from './utils/money.js';
 
@@ -7,10 +7,8 @@ import { formatCurrency } from './utils/money.js';
 
 // Generating HTML
 function updateCartQuantity(){
-	let cartQuantity = 0;
-	cart.forEach((cartItem) => { // calculate the total quantity
-		cartQuantity += cartItem.quantity;
-	});
+	const cartQuantity = calculateCartQuantity();
+
 	document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
 }
 
