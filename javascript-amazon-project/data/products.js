@@ -673,7 +673,7 @@
     ]
   },
   {
-    id: "ah2855e9-9927-284f-b7mm-11pkk832f955",
+    id: "ok9908m9-2638-551k-z0ho-05plq342f617",
     image: "images/products/umbrella.jpg",
     name: "Light Umbrella - Green",
     rating: {
