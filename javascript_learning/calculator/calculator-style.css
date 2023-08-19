@@ -3,7 +3,7 @@ body {
     justify-content: center;
     font-family: Arial;
     color: white;
-    background-color: aquamarine;
+    background-color: rgb(111, 224, 186);
 }
 .calculator {
     background-color: black;
